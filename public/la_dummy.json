@@ -1,0 +1,200 @@
+{
+  "cod": "200",
+  "message": 0,
+  "cnt": 5,
+  "list": [
+    {
+      "dt": 1764018000,
+      "main": {
+        "temp": 18.16,
+        "feels_like": 17.78,
+        "temp_min": 18.16,
+        "temp_max": 20.03,
+        "pressure": 1020,
+        "sea_level": 1020,
+        "grnd_level": 999,
+        "humidity": 67,
+        "temp_kf": -1.87
+      },
+      "weather": [
+        {
+          "id": 801,
+          "main": "Clouds",
+          "description": "algo de nubes",
+          "icon": "02d"
+        }
+      ],
+      "clouds": {
+        "all": 15
+      },
+      "wind": {
+        "speed": 1.23,
+        "deg": 236,
+        "gust": 1.27
+      },
+      "visibility": 10000,
+      "pop": 0,
+      "sys": {
+        "pod": "d"
+      },
+      "dt_txt": "2025-11-24 21:00:00"
+    },
+    {
+      "dt": 1764028800,
+      "main": {
+        "temp": 17.65,
+        "feels_like": 16.93,
+        "temp_min": 17.65,
+        "temp_max": 17.87,
+        "pressure": 1019,
+        "sea_level": 1019,
+        "grnd_level": 998,
+        "humidity": 56,
+        "temp_kf": -0.22
+      },
+      "weather": [
+        {
+          "id": 800,
+          "main": "Clear",
+          "description": "cielo claro",
+          "icon": "01d"
+        }
+      ],
+      "clouds": {
+        "all": 9
+      },
+      "wind": {
+        "speed": 2.93,
+        "deg": 235,
+        "gust": 1.93
+      },
+      "visibility": 10000,
+      "pop": 0,
+      "sys": {
+        "pod": "d"
+      },
+      "dt_txt": "2025-11-25 00:00:00"
+    },
+    {
+      "dt": 1764039600,
+      "main": {
+        "temp": 14.79,
+        "feels_like": 14.02,
+        "temp_min": 14.79,
+        "temp_max": 14.79,
+        "pressure": 1019,
+        "sea_level": 1019,
+        "grnd_level": 999,
+        "humidity": 65,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 800,
+          "main": "Clear",
+          "description": "cielo claro",
+          "icon": "01n"
+        }
+      ],
+      "clouds": {
+        "all": 0
+      },
+      "wind": {
+        "speed": 1.78,
+        "deg": 264,
+        "gust": 2.26
+      },
+      "visibility": 10000,
+      "pop": 0,
+      "sys": {
+        "pod": "n"
+      },
+      "dt_txt": "2025-11-25 03:00:00"
+    },
+    {
+      "dt": 1764050400,
+      "main": {
+        "temp": 13.31,
+        "feels_like": 12.34,
+        "temp_min": 13.31,
+        "temp_max": 13.31,
+        "pressure": 1019,
+        "sea_level": 1019,
+        "grnd_level": 1000,
+        "humidity": 63,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 800,
+          "main": "Clear",
+          "description": "cielo claro",
+          "icon": "01n"
+        }
+      ],
+      "clouds": {
+        "all": 0
+      },
+      "wind": {
+        "speed": 1,
+        "deg": 298,
+        "gust": 1.31
+      },
+      "visibility": 10000,
+      "pop": 0,
+      "sys": {
+        "pod": "n"
+      },
+      "dt_txt": "2025-11-25 06:00:00"
+    },
+    {
+      "dt": 1764061200,
+      "main": {
+        "temp": 12.58,
+        "feels_like": 11.23,
+        "temp_min": 12.58,
+        "temp_max": 12.58,
+        "pressure": 1018,
+        "sea_level": 1018,
+        "grnd_level": 999,
+        "humidity": 51,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 800,
+          "main": "Clear",
+          "description": "cielo claro",
+          "icon": "01n"
+        }
+      ],
+      "clouds": {
+        "all": 0
+      },
+      "wind": {
+        "speed": 0.96,
+        "deg": 1,
+        "gust": 0.79
+      },
+      "visibility": 10000,
+      "pop": 0,
+      "sys": {
+        "pod": "n"
+      },
+      "dt_txt": "2025-11-25 09:00:00"
+    }
+  ],
+  "city": {
+    "id": 5368361,
+    "name": "Los Angeles",
+    "coord": {
+      "lat": 34.0522,
+      "lon": -118.2437
+    },
+    "country": "US",
+    "population": 3792621,
+    "timezone": -28800,
+    "sunrise": 1763994874,
+    "sunset": 1764031523
+  }
+}
