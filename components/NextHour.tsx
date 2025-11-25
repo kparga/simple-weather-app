@@ -1,13 +1,11 @@
 import Image from "next/image"
 import { Key } from "react";
-import { promises as fs } from 'fs';
+
 
 export async function NextHour({ city }: { city: string }) {
-    const file = await fs.readFile(process.cwd() + '/public/la_dummy.json', 'utf8');
-    const data = JSON.parse(file);
-
-    //const res = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=9170e0e85794088df319259526c55afd&units=metric&cnt=5`);
-    //const data = await res.json(); 
+    
+    const res = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=9170e0e85794088df319259526c55afd&units=metric&cnt=5`);
+    const data = await res.json(); 
     
     return (
         <div className='p-2'>

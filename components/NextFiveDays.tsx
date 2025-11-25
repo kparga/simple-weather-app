@@ -1,13 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import Image from "next/image"
-import { promises as fs } from 'fs';
 
 export async function NextFiveDays({ city }: { city: string }) {
-    const file = await fs.readFile(process.cwd() + '/public/la_dummy_full.json', 'utf8');
-    const data = JSON.parse(file);
-    
-    //const res = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=9170e0e85794088df319259526c55afd&units=metric`);
-    //const data = await res.json(); 
+
+    const res = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=9170e0e85794088df319259526c55afd&units=metric`);
+    const data = await res.json(); 
 
     function toDate(timestamp:number) {
         const date = new Date(timestamp)

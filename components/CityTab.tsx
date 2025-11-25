@@ -1,11 +1,12 @@
 "use client"
-import { SetStateAction, useState } from "react"
+import { SetStateAction } from "react"
 
-export function CityTab({ cities }: { cities: string[] }) {
-    const [selectedCity, setSelectedCity] = useState(cities[0].valueOf())
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function CityTab({ cities, selectedCity, setSelectedCity }: { cities:string[], selectedCity:string, setSelectedCity:any }) {
 
     function handleClick(element: SetStateAction<string>){
         setSelectedCity(element)
+        console.log(selectedCity)
     }
     
     return (
