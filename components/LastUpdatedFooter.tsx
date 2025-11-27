@@ -1,4 +1,5 @@
 "use client"
+
 const fechaEnMiliseg = new Date(Date.now())
 
 export function LastUpdatedFooter() {

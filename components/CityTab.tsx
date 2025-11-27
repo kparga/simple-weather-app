@@ -1,4 +1,4 @@
-"use client"
+
 import { SetStateAction } from "react"
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

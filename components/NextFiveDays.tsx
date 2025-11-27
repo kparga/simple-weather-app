@@ -1,27 +1,53 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+"use client"
 import Image from "next/image"
+import { useEffect, useState } from "react";
 
-export async function NextFiveDays({ city }: { city: string }) {
+export function NextFiveDays({ city }: { city: string }) {
+    const [isLoading, setIsLoading] = useState(true);
+        const [data, setData] = useState([]);
+    
+      useEffect(() => {
+        try {
+        fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city?city:"Rio de Janeiro"}&appid=9170e0e85794088df319259526c55afd&units=metric`)
+          .then((response) => response.json())
+          .then((data) => {
+            console.log('response:', data);
+            setData(data); 
+            setIsLoading(false); 
+          });
+        }
+        catch(error){
+            console.log(error)
+        }
+    }, [city]);
 
-    const res = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=9170e0e85794088df319259526c55afd&units=metric`);
-    const data = await res.json(); 
+    //const res = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=9170e0e85794088df319259526c55afd&units=metric`);
+    //const data = await res.json(); 
 
     function toDate(timestamp:number) {
         const date = new Date(timestamp)
         return date.toDateString().substring(0,date.toDateString().length-4)
     }
 
-    const resultArr = data.list.reduce((item: { last: { dt_txt: string; }; arr: any[][]; }, index: { dt_txt: string; }) =>{
+    function resultArr (data: any[]) {
+        try {
+        const resultArr = data.list.reduce((item: { last: { dt_txt: string; }; arr: any[][]; }, index: { dt_txt: string; }) =>{
         if (typeof item.last === 'undefined' || item.last.dt_txt.substring(0,10) !== index.dt_txt.substring(0,10)) {
             item.last = index;
             item.arr.push([]);
         }
         item.arr[item.arr.length - 1].push(index);
         return item;
-    }, {arr: []}).arr;
+        }, {arr: []}).arr;
+        return resultArr
+        }
+        catch(error) {
+            console.error(error);}}
 
     function summarizedWeek(resultArr: any[]) {
         const summary: { icon: string; date: string; description: string; max_temp: number; min_temp: number; }[] = []
+        try{
         resultArr.forEach(element => {
             const day = {
                 icon: element[0].weather[0].icon, 
@@ -31,13 +57,19 @@ export async function NextFiveDays({ city }: { city: string }) {
                 min_temp: Math.min(...element.map((o: { main: { temp: any; }; }) => o.main.temp))}
             summary.push(day)
         })
-        summary.shift()
+        summary.shift()}
+        catch(error){
+            console.log(error)
+        }
         return summary
     }
-    
-    const sum_week = summarizedWeek(resultArr) 
+    const sum_week = summarizedWeek(resultArr(data)) 
+
     return (
-        <div className='p-2'>
+    <div className='p-2'>
+         {isLoading? 
+            <h1>Loading</h1>: 
+        <div>
             <div className='p-4 bg-white text-black font-semibold border-b  border-zinc-100'>
                 <h2>Next 5 days</h2>
             </div>
@@ -57,12 +89,9 @@ export async function NextFiveDays({ city }: { city: string }) {
                         <div className='flex flex-row'>
                             <h3 className='text-zinc-800 p-2'>{Math.round(day.max_temp).toString()+'°'}</h3>   
                             <h3 className='text-zinc-800 p-2'>{Math.round(day.min_temp).toString()+'°'}</h3>   
-                        </div>
-                                            
+                        </div>                         
                     </div>
                  ))}
-
             </div>
         </div>
-    )
-}
+        }</div>)}
