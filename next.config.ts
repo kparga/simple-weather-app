@@ -5,8 +5,8 @@ const nextConfig: NextConfig = {
 };
 module.exports = {
   images: {
-    remotePatterns: [new URL('https://openweathermap.org/**')],
+    remotePatterns: [new URL("https://openweathermap.org/**")],
   },
-}
+};
 
 export default nextConfig;
