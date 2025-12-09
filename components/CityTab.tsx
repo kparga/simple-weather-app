@@ -6,7 +6,6 @@ export function CityTab({ cities, selectedCity, setSelectedCity }: { cities:stri
 
     function handleClick(element: SetStateAction<string>){
         setSelectedCity(element)
-        console.log(selectedCity)
     }
     
     return (

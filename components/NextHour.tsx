@@ -7,7 +7,7 @@ export function NextHour({ city }: { city: string }) {
     const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city?city:"Rio de Janeiro"}&appid=9170e0e85794088df319259526c55afd&units=metric&cnt=5`)
+    fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city?city:"Rio de Janeiro"}&appid=${process.env.NEXT_PUBLIC_API_KEY}&units=metric&cnt=5`)
       .then((response) => response.json())
       .then((data) => {
         setData(data); 
@@ -17,7 +17,7 @@ export function NextHour({ city }: { city: string }) {
 
     //const res = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=9170e0e85794088df319259526c55afd&units=metric&cnt=5`);
     //const data = await res.json(); 
-    
+
     return (
         <div className='p-2'>
             {isLoading? 

@@ -9,10 +9,9 @@ export function NextFiveDays({ city }: { city: string }) {
     
       useEffect(() => {
         try {
-        fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city?city:"Rio de Janeiro"}&appid=9170e0e85794088df319259526c55afd&units=metric`)
+        fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city?city:"Rio de Janeiro"}&appid=${process.env.NEXT_PUBLIC_API_KEY}&units=metric`)
           .then((response) => response.json())
           .then((data) => {
-            console.log('response:', data);
             setData(data); 
             setIsLoading(false); 
           });
