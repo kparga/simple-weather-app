@@ -1,9 +1,9 @@
 "use client";
-import { CityTab } from "@/components/CityTab";
-import { LastUpdatedFooter } from "@/components/LastUpdatedFooter";
-import { NavBar } from "@/components/Navbar";
-import { NextFiveDays } from "@/components/NextFiveDays";
-import { NextHour } from "@/components/NextHour";
+import { CityTab } from "@/app/components/CityTab";
+import { LastUpdatedFooter } from "@/app/components/LastUpdatedFooter";
+import { NavBar } from "@/app/components/Navbar";
+import { NextFiveDays } from "@/app/components/NextFiveDays";
+import { NextHour } from "@/app/components/NextHour";
 import { useState } from "react";
 
 export default function Home() {

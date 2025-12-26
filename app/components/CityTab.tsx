@@ -1,6 +1,3 @@
-import { SetStateAction } from "react";
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function CityTab({
   cities,
   selectedCity,
@@ -8,9 +5,9 @@ export function CityTab({
 }: {
   cities: string[];
   selectedCity: string;
-  setSelectedCity: any;
+  setSelectedCity: (arg0: string) => void;
 }) {
-  function handleClick(element: SetStateAction<string>) {
+  function handleClick(element: string) {
     setSelectedCity(element);
   }
 
