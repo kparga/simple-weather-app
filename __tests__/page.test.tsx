@@ -7,7 +7,7 @@ import { promises as fs } from "fs";
 describe("Page test", () => {
   it("renders a heading", async () => {
     const file = await fs.readFile(
-      process.cwd() + "/public/la_dummy.json",
+      process.cwd() + "/__tests__/la_dummy.json",
       "utf8",
     );
     window.fetch = mockFetch(JSON.parse(file));

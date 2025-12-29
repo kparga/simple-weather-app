@@ -18,7 +18,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Features
 
-- Refresh button at the bottom 
+- Refresh button at the bottom
 - Basic testing and ESLint
 - Responsive design
 

@@ -23,7 +23,7 @@ export function NextHour({ city }: { city: string }) {
       {isLoading ? (
         <h2>Loading</h2>
       ) : (
-        <div >
+        <div>
           <div className="p-4 bg-white text-black font-semibold border-b border-zinc-100">
             <h2>Next hours</h2>
           </div>
