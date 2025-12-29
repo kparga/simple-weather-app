@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { WeatherData, ForecastedData } from "./definitions";
 
 export function toDate(timestamp: number) {

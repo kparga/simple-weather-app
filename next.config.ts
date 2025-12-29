@@ -5,7 +5,10 @@ const nextConfig: NextConfig = {
 };
 module.exports = {
   images: {
-    remotePatterns: [new URL("https://openweathermap.org/**")],
+    remotePatterns: [
+      new URL("https://openweathermap.org/**"),
+      new URL("https://upload.wikimedia.org/**"),
+    ],
   },
 };
 

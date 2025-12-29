@@ -5,7 +5,7 @@ import { CityTab } from "@/app/components/CityTab";
 describe("CityTab Component test", () => {
   it("renders a tab for each city", async () => {
     const mockCities = ["Budapest", "Barcelona", "London"];
-    const selectedCity = "Budapest"
+    const selectedCity = "Budapest";
     function handleChange() {}
     render(
       <CityTab

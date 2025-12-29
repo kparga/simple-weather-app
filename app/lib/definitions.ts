@@ -19,6 +19,7 @@ export type WeatherData = {
 };
 
 export type ForecastedData = {
+  arr: any;
   dt: number;
   main: {
     temp: number;
