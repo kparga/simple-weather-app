@@ -4,12 +4,9 @@ import { NavBar } from "@/app/components/Navbar";
 
 describe("Navbar Component test", () => {
   it("renders the header", async () => {
-    render(
-      <NavBar/>,
-    );
+    render(<NavBar />);
     const title = screen.getByText("Simple Weather");
 
     expect(title).toBeInTheDocument();
   });
 });
-
