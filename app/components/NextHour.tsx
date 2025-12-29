@@ -23,7 +23,7 @@ export function NextHour({ city }: { city: string }) {
       {isLoading ? (
         <h2>Loading</h2>
       ) : (
-        <div>
+        <div >
           <div className="p-4 bg-white text-black font-semibold border-b border-zinc-100">
             <h2>Next hours</h2>
           </div>
@@ -31,6 +31,7 @@ export function NextHour({ city }: { city: string }) {
             {data?.list.map((moment: ForecastedData) => (
               <div
                 className="bg-white p-2 grow justify-items-center"
+                data-testid="moment"
                 key={moment.dt}
               >
                 <h3 className="text-black">

@@ -1,2 +1,18 @@
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
+import { NextHour } from "@/app/components/NextHour";
+import { mockFetch } from "@/app/lib/mockFetch";
+import { promises as fs } from "fs";
+
+describe("NextHour Component test", () => {
+  it("renders a loading state when no data is available ", async () => {
+    const file = await fs.readFile(
+          process.cwd() + "/public/la_dummy.json",
+          "utf8",
+        );
+        window.fetch = mockFetch(JSON.parse(file));
+    render(<NextHour city={"Los Angeles"} />);
+    const children = screen.getByText('Loading')
+    expect(children).toBeInTheDocument()
+  });
+});
